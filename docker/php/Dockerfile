@@ -1,9 +1,10 @@
 FROM php:7.1-fpm
 
+# https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
 RUN apt-get update && apt-get install -y \
- 		# composer \
-        git zip \
- 		&& rm -rf /var/lib/apt/lists/*
+	# composer \
+	git zip \
+	&& rm -rf /var/lib/apt/lists/*
 
 # https://hub.docker.com/_/php/
 RUN docker-php-ext-install -j$(nproc) pdo_mysql
