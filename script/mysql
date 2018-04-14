@@ -6,4 +6,4 @@ SCRIPT_DIR=$(dirname "$0")
 
 . $SCRIPT_DIR/env_test
 
-docker-compose exec mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" $MYSQL_DATABASE'
+docker-compose exec db sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" --prompt="\u[\d]> " $MYSQL_DATABASE'

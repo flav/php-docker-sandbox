@@ -1,9 +1,9 @@
 index.php
 <?php
 
-$dsn = 'mysql:host=mysql;dbname=' . getenv('MYSQL_DATABASE');
-$username = getenv('MYSQL_USER');
-$password = getenv('MYSQL_PASSWORD');
+$dsn = 'mysql:host=db;dbname=' . getenv('DB_DATABASE');
+$username = getenv('DB_USERNAME');
+$password = getenv('DB_PASSWORD');
 $options = array(
     //PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
 );
