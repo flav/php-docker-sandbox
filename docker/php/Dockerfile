@@ -28,5 +28,6 @@ RUN set -xe; \
 RUN useradd -m php
 USER php
 
+WORKDIR /var/www/app
 EXPOSE 9000
 CMD ["php-fpm"]
