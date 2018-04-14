@@ -25,7 +25,7 @@ RUN set -xe; \
 	rm composer-setup.php;
 
 
-RUN useradd -m php || adduser -D myuser
+RUN useradd -m php
 USER php
 
 EXPOSE 9000
