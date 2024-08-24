@@ -26,7 +26,7 @@ RUN <<EOF
 	iputils-ping \
 	jq \
 	net-tools \
-	netcat \
+	netcat-traditional \
 	postgresql-client \
 	procps \
 	pv \
