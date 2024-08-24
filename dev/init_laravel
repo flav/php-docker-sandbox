@@ -27,9 +27,9 @@ git add .
 git commit -m 'initial commit'
 
 # Can't install laravel into the current dir
-docker-compose run -u root php composer create-project --prefer-dist laravel/laravel temp_laravel
+docker-compose run --rm -u root php composer create-project --prefer-dist laravel/laravel temp_laravel
 
-for f in .env .env.example .gitattributes .gitignore; do
+for f in .env .env.example .gitattributes .gitignore .editorconfig; do
 	if [ -f $f ]; then
 		cat temp_laravel/$f >> $f
 		rm -f temp_laravel/$f

@@ -58,9 +58,11 @@ RUN <<EOF
 		pcntl \
 		pdo_mysql \
 		pdo_pgsql \
+		pdo_sqlite \
 		redis \
 		soap \
 		sockets \
+		sqlite3 \
 		xdebug \
 		zip
 EOF
@@ -86,6 +88,6 @@ EOF
 RUN useradd -m php
 USER php
 
-WORKDIR /var/www
+WORKDIR /var/www/app
 EXPOSE 9000
 CMD ["php-fpm"]

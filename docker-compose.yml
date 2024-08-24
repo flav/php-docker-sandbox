@@ -9,8 +9,6 @@ services:
     volumes:
       - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./public:/var/www/app/public:ro
-    links:
-        - php
   php:
     image: fdc/php:dev
     hostname: php-dev
@@ -21,8 +19,6 @@ services:
       - ./docker/root:/root
       - .:/var/www/app:rw
       - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
-    links:
-        - db
     environment:
       - DB_DATABASE=${DB_DATABASE}
       - DB_USERNAME=${DB_USERNAME}
