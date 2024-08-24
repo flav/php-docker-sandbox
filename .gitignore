@@ -1,3 +1,4 @@
-vendor/*
-docker/mysql/data/*
-.env
+/vendor/*
+/docker/mysql/data/*
+/docker/root
+/.env
