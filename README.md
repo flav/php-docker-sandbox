@@ -9,8 +9,9 @@ _once docker is installed_
 create a `.env` file using `dot.env` as a template
 
   - `dev/up`
-  - http://127.0.0.1:8080/
-    *note: takes a few for the mysql container to startup - may see PDO error
+  - http://localhost/
+    - *note: takes a few for the mysql container to startup - may see PDO error
+    - *note: self-signed [snake-oil](https://en.wikipedia.org/wiki/Snake_oil_(cryptography)) cert
   - `dev/down` when done
   - `dev/clean` to reset (e.g. if you make a change to a Dockerfile)
 
