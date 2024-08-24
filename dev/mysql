@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# Safe bash settings
+# -e            Exit on command fail
+# -u            Treat unset variables as error
+# -x            Print command before executing
+# -o pipefail   Set error if piped command has error code
+set -e -o pipefail
+
+SCRIPT_DIR=$(dirname "$0")
+cd "$SCRIPT_DIR/.."
+
+"$SCRIPT_DIR/env_test"
+
+# shellcheck source=/dev/null
+source .env
+
+${DOCKER_COMPOSE:-docker-compose} exec db sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" --prompt="\u[\d]> " $MYSQL_DATABASE'

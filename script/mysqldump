@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -x
-
-SCRIPT_DIR=$(dirname "$0")
-
-. $SCRIPT_DIR/env_test
-
-docker-compose exec db sh -c 'exec mysqldump -uroot -p"$DB_PASSWORD" $DB_DATABASE'
